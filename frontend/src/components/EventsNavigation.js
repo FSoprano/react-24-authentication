@@ -22,7 +22,7 @@ function EventsNavigation() {
               All Events
             </NavLink>
           </li>
-          { token && (adm === 'test2@test.com') ?  <li>
+          { token && (adm === process.env.REACT_APP_ADM) ?  <li>
             <NavLink
               to="/events/new"
               className={({ isActive }) =>

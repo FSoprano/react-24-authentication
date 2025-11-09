@@ -52,8 +52,6 @@ const expiration = new Date();
 expiration.setHours(expiration.getHours() + 1);
 localStorage.setItem('expiration', expiration.toISOString());
 // We now also store the expiration date in local storage.
-console.log(authData.email);
-
 
  return redirect('/');
 }
