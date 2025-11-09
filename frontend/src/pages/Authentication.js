@@ -22,6 +22,7 @@ export async function action({ request }) {
     email: data.get('email'),
     password: data.get('password')
   }
+  localStorage.setItem('email', authData.email);
   const response = await fetch ('http://localhost:8080/' + mode, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -51,6 +52,8 @@ const expiration = new Date();
 expiration.setHours(expiration.getHours() + 1);
 localStorage.setItem('expiration', expiration.toISOString());
 // We now also store the expiration date in local storage.
+console.log(authData.email);
+
 
  return redirect('/');
 }

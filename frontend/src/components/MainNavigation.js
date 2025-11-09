@@ -16,6 +16,8 @@ function MainNavigation() {
   // This is the token because it's what the loader of the root route returns.
   // If the token can be retrieved, someone's logged in. If it's undefined, 
   // no one is logged in. This can be used for conditional processing.
+ 
+  
   return (
     <header className={classes.header}>
       <nav>

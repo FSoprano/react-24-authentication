@@ -4,6 +4,9 @@ import classes from './EventsNavigation.module.css';
 
 function EventsNavigation() {
   const token = useRouteLoaderData('root');
+  
+  const adm = localStorage.getItem('email');
+
   return (
     <header className={classes.header}>
       <nav>
@@ -19,7 +22,7 @@ function EventsNavigation() {
               All Events
             </NavLink>
           </li>
-          { token && <li>
+          { token && (adm === 'test2@test.com') ?  <li>
             <NavLink
               to="/events/new"
               className={({ isActive }) =>
@@ -28,7 +31,7 @@ function EventsNavigation() {
             >
               New Event
             </NavLink>
-          </li>}
+          </li> : undefined }
         </ul>
       </nav>
     </header>
