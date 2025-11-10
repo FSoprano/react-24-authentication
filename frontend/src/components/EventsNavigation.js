@@ -1,4 +1,5 @@
 import { NavLink, useRouteLoaderData } from 'react-router-dom';
+import { MY_ADM } from './Admin';
 
 import classes from './EventsNavigation.module.css';
 
@@ -6,6 +7,7 @@ function EventsNavigation() {
   const token = useRouteLoaderData('root');
   
   const adm = localStorage.getItem('email');
+  
 
   return (
     <header className={classes.header}>
@@ -22,7 +24,7 @@ function EventsNavigation() {
               All Events
             </NavLink>
           </li>
-          { token && (adm === process.env.REACT_APP_ADM) ?  <li>
+          { token && ( MY_ADM.includes(adm) ) ?  <li>
             <NavLink
               to="/events/new"
               className={({ isActive }) =>
